@@ -13,38 +13,40 @@
 </script>
 
 <template>
-     <div class="text-yellow-300 bg-green-700">
-          <div class="container flex items-center justify-between mx-auto">
-            <h1 class="text-2xl font-medium tracking-tight ">
-               Vue<span class="font-normal">RealAuth</span>
+     <div >
+          <div >
+            <h1 >
+              Final Project
+
+              <h2>Inventory</h2>
                    
             </h1>
             <nav>
-                <ul class="flex space-x-4">
+                <ul >
                     <router-link to="/">
-                    <li class="px-8 py-6 bg-green-900 hover:cursor-pointer hover:bg-yellow-200 hover:text-indigo-600">Home
+                    <li >Home
                     </li>
                     </router-link>
 
                     
-                    <router-link to="./About"><li class="px-8 py-6 bg-green-900 hover:cursor-pointer hover:bg-yellow-200 hover:text-indigo-600">About   
+                    <router-link to="./About"><li >About   
                     </li>
                     </router-link>
 
                     
                     <router-link v-if="!isAuthenticated" :to="{ path: '/login', name: 'Login' }">
-                    <li class="px-8 py-6 bg-green-900 hover:cursor-pointer hover:bg-yellow-200 hover:text-indigo-600">Login
+                    <li >Login
                     </li>
                     </router-link>
 
                     <div  v-else class="flex">
                     <router-link   :to="{ path: '/secret', name: 'Secret' }">
-                    <li class="px-8 py-6 bg-green-900 hover:cursor-pointer hover:bg-yellow-200 hover:text-indigo-600">Secret
+                    <li >Secret
                     </li>
                     </router-link>
 
                     <button  @click="loggingOut">
-                    <li class="px-8 py-6 bg-green-900 hover:cursor-pointer hover:bg-yellow-200 hover:text-indigo-600">
+                    <li >
                     Logout
                     </li>
                     </button>
