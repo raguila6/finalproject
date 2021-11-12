@@ -18,7 +18,7 @@
             <h1 >
               Final Project
 
-              <h2>Inventory</h2>
+              <h2>Inventory Page</h2>
                    
             </h1>
             <nav>
@@ -40,12 +40,12 @@
                     </router-link>
 
                     <div  v-else class="flex">
-                    <router-link   :to="{ path: '/secret', name: 'Secret' }">
-                    <li >Secret
+                    <router-link   :to="{ path: '/inventory', name: 'Inventory' }">
+                    <li >Inventory
                     </li>
                     </router-link>
 
-                    <button  @click="loggingOut">
+                    <button  @click="loggingOut" class="px-40">
                     <li >
                     Logout
                     </li>
