@@ -8,7 +8,7 @@
 <template>
 <Nav/>
 
-<div class="container mx-auto">
+<div class="h-screen bg-gray-500 container-full">
   <router-view/>
 </div>
 

@@ -67,7 +67,7 @@ const { ready, start } = useTimeout(3000, { controls: true });
 
             
         <div class="flex bg-gray-200 shadow-2xl rounded-2xl">   
-            <img class="h-60" src="../assets/loginpg.png"  alt="loginBG">
+            <img class="h-60" src="../assets/typing.gif"  alt="loginBG">
 
             <form @submit.prevent="logginIn" class="flex flex-col items-center justify-center p-4 space-y-4">
                 <input type="text" class="p-2 border-2 rounded-full " placeholder="Email" v-model="username">

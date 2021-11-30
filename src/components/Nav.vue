@@ -13,40 +13,39 @@
 </script>
 
 <template>
-     <div >
-          <div >
-            <h1 >
-              Final Project
-
-              <h2>Inventory Page</h2>
+     <div class="bg-green-300 " >
+          <div class="container flex items-center justify-between mx-auto" >
+            <div><h1 class="flex align-text-top" >
+              Final Project 
                    
             </h1>
+            </div>
             <nav>
-                <ul >
+                <ul class="flex space-x-4 bg-blue-200 " >
                     <router-link to="/">
-                    <li >Home
+                    <li  class="px-3 py-6 bg-blue-400 rounded-md">Home
                     </li>
                     </router-link>
 
                     
-                    <router-link to="./About"><li >About   
+                    <router-link to="./About"><li class="px-3 py-6 bg-blue-400 rounded-md" >About   
                     </li>
                     </router-link>
 
                     
                     <router-link v-if="!isAuthenticated" :to="{ path: '/login', name: 'Login' }">
-                    <li >Login
+                    <li class="px-3 py-6 bg-blue-400 rounded-md">Login
                     </li>
                     </router-link>
 
                     <div  v-else class="flex">
                     <router-link   :to="{ path: '/inventory', name: 'Inventory' }">
-                    <li >Inventory
+                    <li class="px-3 py-6 bg-blue-400 rounded-md">Inventory
                     </li>
                     </router-link>
 
                     <button  @click="loggingOut" class="px-40">
-                    <li >
+                    <li class="px-3 py-6 bg-blue-400 rounded-md">
                     Logout
                     </li>
                     </button>
