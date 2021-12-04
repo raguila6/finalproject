@@ -1,5 +1,5 @@
 import { ref } from "vue"
-import { collection, query, orderBy ,onSnapshot, addDoc, } from "firebase/firestore";
+import { collection, query, orderBy ,onSnapshot, addDoc, updateDoc } from "firebase/firestore";
 
 
 import {db} from "./useFirebase"
@@ -24,15 +24,20 @@ const useDB = () => {
         })
    })
 
-   const sendItem = async serial => {
+   const sendSerial = async serialNum => {
        await addDoc(inventoryCollection, {
-           serial: serial,
-           brand: brand,
+           serial: serialNum,
            createdAt: new  Date(),
        })
    }
+       const sendBrand = async brandName => {
+        await addDoc(inventoryCollection, {
+            brand: brandName,
+        })    
 
-   return {inventory, unsubscribe, sendItem}
+   }
+
+   return {inventory, unsubscribe, sendSerial, sendBrand}
 }
 
 export default useDB
