@@ -2,13 +2,26 @@
     import { onUnmounted, ref } from "vue"
     import useDB from "../composable/useDB"
     import useAuth from "../composable/useAuth"
-    const  {inventory, unsubscribe, sendItem} = useDB()
+    const  {inventory, unsubscribe, sendSerial, sendBrand} = useDB()
     const {user} = useAuth()
-    const newItem = ref('')
-    const sendSerial = ()  => {
-        newItem(newItem.value)
-        newItem.value = ""
+    const newSer = ref('')
+    const newBrand = ref('')
+
+    const newSerial = ()  => {
+       sendSerial(newSer.value)
+       newSer.value =""
     }
+    const inputBrand = ()  => {
+        sendBrand(newBrand.value)
+        newBrand.value= ""
+    }
+
+      const sendInfo = ()  => {
+        newSerial()
+        inputBrand()
+      }
+   
+
     onUnmounted(() => {
         unsubscribe()
     })
@@ -31,9 +44,11 @@
 
     <div>
         <input class="p-5 rounded-xl focus:outline-none focus:bg-red-300" type="text" placeholder="Type a serial!!!!" 
-        v-model="sendSerial" @change="send" >
+        v-model="newSer"  >
          <input class="p-5 rounded-xl focus:outline-none focus:bg-red-300" type="text" placeholder="Type a brand!!!!" 
-        v-model="send" @change="send" >
+        v-model="newBrand">
+        <button @click="sendInfo">Add Unit</button>
+        
     </div>
 
 </div>
