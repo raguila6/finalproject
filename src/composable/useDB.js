@@ -31,7 +31,7 @@ const useDB = () => {
        })
    }
        const sendBrand = async brandName => {
-        await addDoc(inventoryCollection, {
+        await updateDoc(inventoryCollection, {
             brand: brandName,
         })    
 
